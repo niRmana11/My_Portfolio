@@ -1,11 +1,63 @@
-.hero-title {
-    font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero-title span{
-    font-size: 70px;
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero {
+    background: url('../assets/img/LandingPageBackground.png');
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+    background-position: center, center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    text-align: center;
+    color: #fff;
+    animation: fadein 2s ease;
+}
+
+.hero-title {
+  font-size: 3rem;
+  text-shadow: 0 0 10px #a168ff;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #e0caff;
+}
+
+.enter-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: #a168ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #a168ff;
+  transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+  background: #fff;
+  color: #a168ff;
+  box-shadow: 0 0 20px #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
