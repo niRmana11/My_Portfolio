@@ -1,0 +1,42 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Base style for clickable zones */
+.clickable {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+}
+
+/* Customize each area (you need to adjust position and size manually) */
+.palace {
+  top: 40%;
+  left: 60%;
+  width: 100px;
+  height: 100px;
+}
+.tower {
+  top: 30%;
+  left: 20%;
+  width: 80px;
+  height: 120px;
+}
+.forest {
+  top: 70%;
+  left: 50%;
+  width: 120px;
+  height: 100px;
+}
+
+/* Optional: Add a border for debugging clickable zones */
+.clickable:hover {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+}
