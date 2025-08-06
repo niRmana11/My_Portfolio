@@ -1,3 +1,4 @@
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -5,28 +6,51 @@
 }
 
 body {
-  height: 100%;
-  overflow: hidden;
-  font-family: sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d1a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Header */
+.header {
+  padding: 20px 0 10px;
+  text-align: center;
+  text-shadow: 2px 2px 5px #000;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-family: 'Cursive', serif;
+  color: #f8e287;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #ccc;
+  opacity: 0.85;
+}
+
+/* Hero Background */
 .hero {
-  background: url('../assets/img/homeBackground.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  height: calc(100vh - 170px);
+  background: url('../assets/img/homeBackground.png') no-repeat center center/cover;
   position: relative;
   overflow: hidden;
 }
 
-
+/* Floating Icons */
 .icon-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
-
 
 .floating {
   animation: floatY 7s ease-in-out infinite;
@@ -36,11 +60,9 @@ body {
 }
 
 .icon-link {
-  position: absolute;
   display: inline-block;
   text-align: center;
 }
-
 
 .icon-link img {
   width: 60px;
@@ -48,13 +70,13 @@ body {
   transition: transform 0.3s ease;
 }
 
-
 .icon-link:hover img {
   transform: scale(1.2) rotate(5deg);
   margin-bottom: 10px;
+  
 }
 
-
+/* Labels */
 .label {
   position: absolute;
   bottom: -30px;
@@ -75,7 +97,7 @@ body {
   opacity: 1;
 }
 
-
+/* Floating Animation */
 @keyframes floatY {
   0% {
     transform: translateY(0);
@@ -88,8 +110,62 @@ body {
   }
 }
 
+/* Glowing Text */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 1px #ffd700, 0 0 5px #ffa500;
+  }
+  to {
+    text-shadow: 0 0 3px #ffea00, 0 0 20px #ffcc00;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 14px 0;
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #a6a06b; /* pale goldenrod */
+  background: rgba(10, 10, 30, 0.7);
+  font-family: 'Cursive', serif;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+.footer p{
+  margin-bottom: 0;
+}
+
+.social-links {
+  margin-bottom: 12px;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 4px 35px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5f4b8b, #6a0572); /* mystical purple gradient */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(186, 85, 211, 0.8), 0 0 20px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #6a0572, #8e44ad);
+}
 
 
+
+
+/* Icon Positions */
 .icon-project {
   top: 25%;
   left: 8%;
@@ -103,9 +179,15 @@ body {
 .icon-resume {
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .icon-skills {
   top: 80%;
   left: 10%;
+}
+
+.icon-contact {
+  top: 75%;
+  left: 80%;
 }
