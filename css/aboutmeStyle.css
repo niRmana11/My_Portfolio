@@ -1,0 +1,165 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Press Start 2P', cursive, sans-serif; /* optional pixel font */
+  color: #fff;
+  overflow-x: hidden;
+  background-color: #0d011b;
+}
+
+/* Background image (blurred fantasy) */
+.background {
+  background: url('../images/homeBackground.png') no-repeat center center;
+  background-size: cover;
+  filter: blur(4px) brightness(0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 20px 0 10px;
+  color: #ffe8ff;
+  text-shadow: 0 0 10px #ff00cc, 0 0 30px #9900ff;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.home-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  color: #f8e287;
+  text-decoration: none;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.home-icon img{
+    width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.home-icon:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+
+.tagline {
+  font-size: 1rem;
+  color: #bfb7ff;
+}
+
+/* Container Box */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(20, 0, 40, 0.7);
+  border: 2px solid rgba(200, 150, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 255, 0.4);
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #a4f6ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+/* Section headings */
+.about-section h2,
+.education-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffeefc;
+  text-shadow: 0 0 5px #ffccff;
+}
+
+/* Paragraphs */
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #e0d6ff;
+  margin-bottom: 30px;
+}
+
+/* Education */
+.education-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-section li {
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 12px;
+  padding: 15px;
+  border-left: 4px solid #bb86fc;
+  font-size: 0.95rem;
+  color: #dadada;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  text-align: center;
+  padding:  20px  0 5px 0;
+  background: rgba(10, 0, 30, 0.8);
+  color: #ccc;
+  font-size: 0.8rem;
+ 
+ 
+}
+
+.footer p{
+  margin-bottom: 0;
+}
+
+.social-links {
+  margin-bottom: 12px;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 0 12px;
+  color: #ffa500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border: 1px solid #ffa500;
+  border-radius: 8px;
+}
+
+.social-btn:hover {
+  background: #f8e0b4;
+
+  color: #000;
+  box-shadow: 0 0 10px #ffa500;
+}
+
+
+/* Optional pixel font (from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d0d1a;
+  background-color: rgba(10, 0, 30, 0.8);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ body {
   padding: 20px 0 10px;
   text-align: center;
   text-shadow: 2px 2px 5px #000;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(10, 0, 30, 0.8);
   z-index: 10;
 }
 
@@ -39,7 +39,7 @@ body {
 
 /* Hero Background */
 .hero {
-  height: calc(100vh - 170px);
+  height: calc(100vh - 180px);
   background: url('../assets/img/homeBackground.png') no-repeat center center/cover;
   position: relative;
   overflow: hidden;
@@ -122,15 +122,13 @@ body {
 
 /* Footer */
 .footer {
-  padding: 14px 0;
-  padding-bottom: 0;
   text-align: center;
-  font-size: 14px;
-  color: #a6a06b; /* pale goldenrod */
-  background: rgba(10, 10, 30, 0.7);
-  font-family: 'Cursive', serif;
-  user-select: none;
-  letter-spacing: 0.05em;
+  padding:  20px  0 5px 0;
+  background: rgba(10, 0, 30, 0.8);
+  color: #ccc;
+  font-size: 0.8rem;
+ 
+ 
 }
 
 .footer p{
@@ -143,23 +141,21 @@ body {
 
 .social-btn {
   display: inline-block;
-  margin: 0 8px;
-  padding: 4px 35px;
-  border-radius: 5px;
-  font-weight: 800;
-  font-size: 14px;
+  margin: 0 12px;
+  color: #ffa500;
+  font-size: 0.9rem;
   text-decoration: none;
-  color: #ffffff;
-  background: linear-gradient(135deg, #5f4b8b, #6a0572); /* mystical purple gradient */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
   transition: all 0.3s ease;
+  padding: 6px 12px;
+  border: 1px solid #ffa500;
+  border-radius: 8px;
 }
 
 .social-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(186, 85, 211, 0.8), 0 0 20px rgba(255, 255, 255, 0.1);
-  background: linear-gradient(135deg, #6a0572, #8e44ad);
+  background: #f8e0b4;
+
+  color: #000;
+  box-shadow: 0 0 10px #ffa500;
 }
 
 
