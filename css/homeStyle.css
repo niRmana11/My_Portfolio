@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Press Start 2P', cursive, sans-serif;
   background-color: rgba(10, 0, 30, 0.8);
   color: #fff;
   display: flex;
@@ -26,7 +26,7 @@ body {
 
 .header h1 {
   font-size: 36px;
-  font-family: 'Cursive', serif;
+  
   color: #f8e287;
   animation: glow 3s ease-in-out infinite alternate;
 }
@@ -39,7 +39,7 @@ body {
 
 /* Hero Background */
 .hero {
-  height: calc(100vh - 180px);
+  height: calc(100vh - 192px);
   background: url('../assets/img/homeBackground.png') no-repeat center center/cover;
   position: relative;
   overflow: hidden;
