@@ -48,9 +48,29 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-.home-icon:hover {
+.home-icon:hover img{
   transform: scale(1.2);
   color: #ffd700;
+}
+
+.label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #ffd700;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.home-icon:hover .label {
+  opacity: 1;
 }
 
 .container {
