@@ -10,12 +10,13 @@
 <body>
 
 <header class="header">
-    <a href="/home.html" class="home-icon" title="Back to Home">
-        <img src="/assets/icons/door.png" alt="home">
-        <span class="label">Back to Home</span>
-    </a>
-    <h1>Contact Me</h1>
-</header>
+        <a href="/home.html" class="home-icon" title="Back to Home">
+            <img src="/assets/icons/door.png" alt="home" />
+            <span class="label">Back to Home</span>
+        </a>
+        <h1>About Me</h1>
+
+    </header>
 
 <div class="contact-container">
     <!-- Left: Contact Form -->
@@ -42,8 +43,8 @@
     <section class="contact-info-section">
         <h2>🔮 Other Ways to Reach Me</h2>
         <ul class="contact-list">
-            <li><i class="fas fa-envelope"></i> your.email@example.com</li>
-            <li><i class="fas fa-phone"></i> +94 71 234 5678</li>
+            <li><i class="fas fa-envelope"></i> nirmanaherath123@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +94 77 600 8932</li>
             <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
         </ul>
 
@@ -62,13 +63,13 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
     (function(){
-        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+        emailjs.init("20Dj1Jg37VpRTSTZR"); // Replace with your EmailJS Public Key
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        emailjs.sendForm("service_neeg1sa", "template_ncc3zfi", this)
             .then(function() {
                 alert("✨ Your magical message has been sent successfully!");
                 document.getElementById("contact-form").reset();
