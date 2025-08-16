@@ -1,15 +1,16 @@
-body, html {
-    height: 100%;
-    color: #fff;
-    background-color: #0d011b;
-    font-family: 'Press Start 2P', cursive, sans-serif;
+body,
+html {
+  height: 100%;
+  color: #fff;
+  background-color: #0d011b;
+  font-family: "Press Start 2P", cursive, sans-serif;
 }
 
 /* Header */
 .header {
   position: relative;
   text-align: center;
-  padding: 20px 0 10px;
+  padding: 10px 0 10px;
   color: #ffe8ff;
   text-shadow: 0 0 10px #ff00cc, 0 0 30px #9900ff;
 }
@@ -17,6 +18,7 @@ body, html {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .home-icon {
@@ -30,13 +32,13 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-.home-icon img{
-    width: 50px;
+.home-icon img {
+  width: 50px;
   height: 50px;
   transition: transform 0.3s ease;
 }
 
-.home-icon:hover img{
+.home-icon:hover img {
   transform: scale(1.2);
   color: #ffd700;
 }
@@ -46,7 +48,7 @@ body, html {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  
+
   padding: 6px 12px;
   border-radius: 8px;
   color: #ffd700;
@@ -62,93 +64,115 @@ body, html {
 }
 
 .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.contact-form-section, .contact-info-section {
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.07);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 5px solid #9900ff;
-    box-shadow: 0 0 20px rgba(150, 0, 255, 0.4);
+.contact-form-section,
+.contact-info-section {
+  flex: 1;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 5px solid #9900ff;
+  box-shadow: 0 0 20px rgba(150, 0, 255, 0.4);
 }
 
-.contact-form-section h2, .contact-info-section h2 {
-    color: #ffd700;
-    margin-bottom: 20px;
+.contact-form-section h2,
+.contact-info-section h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  width: 95%;
+}
+
+.contact-info-section {
+  text-align: center;
+}
+
+.contact-info-section a {
+  margin: 0 20px;
 }
 
 label {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9rem;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.9rem;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
 }
-textarea { resize: none; }
+textarea {
+  resize: none;
+}
 
 .submit-btn {
-    margin-top: 15px;
-    background-color: #7b00ffa7;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
+  margin: 15px auto 0;
+  background-color: #7b00ffa7;
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: block;
+  width: auto;
+  min-width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
+
 .submit-btn:hover {
-    background-color: #9900ff;
+  background-color: #9900ff;
+  transform: scale(1.05);
 }
 
 .contact-list {
-    list-style: none;
-    margin-top: 10px;
+  list-style: none;
+  margin-top: 10px;
 }
 .contact-list li {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
 }
 .contact-list i {
-    margin-right: 8px;
-    color: #ffd700;
+  margin-right: 8px;
+  color: #ffd700;
 }
 
 .social-links {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-.social-btn {
-    display: inline-block;
-    margin: 5px 10px 0 0;
-    padding: 6px 12px;
-    border: 1px solid #ffa500;
-    border-radius: 8px;
-    color: #ffa500;
-    text-decoration: none;
+
+.social-links a img {
+  transition: transform 0.3s ease;
 }
-.social-btn:hover {
-    background: #fbd080;
-    color: #000;
+
+.social-links a img:hover {
+  transform: scale(1.05);
 }
 
 .footer {
-    text-align: center;
-    padding: 15px;
-    background: rgba(10, 0, 30, 0.8);
-    font-size: 0.8rem;
-    margin-top: 40px;
+  text-align: center;
+  padding: 20px 0 5px 0;
+  background: rgba(10, 0, 30, 0.8);
+  color: #ccc;
+  font-size: 0.8rem;
 }

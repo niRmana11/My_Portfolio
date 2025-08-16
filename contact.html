@@ -1,84 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Me - Magical Realm</title>
-    <link rel="stylesheet" href="/css/contactStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-<header class="header">
-        <a href="/home.html" class="home-icon" title="Back to Home">
-            <img src="/assets/icons/door.png" alt="home" />
-            <span class="label">Back to Home</span>
-        </a>
-        <h1>About Me</h1>
-
+    <link rel="stylesheet" href="/css/contactStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/home.html" class="home-icon" title="Back to Home">
+        <img src="/assets/icons/door.png" alt="home" />
+        <span class="label">Back to Home</span>
+      </a>
+      <h1>About Me</h1>
     </header>
 
-<div class="contact-container">
-    <!-- Left: Contact Form -->
-    <section class="contact-form-section">
-        <h2>📜 Send a Magical Message</h2>
+    <div class="contact-container">
+      <!-- Left: Contact Form -->
+      <section class="contact-form-section">
+        <h2>Send a Message</h2>
         <form id="contact-form">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="from_name" required>
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="from_name" required />
 
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="reply_to" required>
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="reply_to" required />
 
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit" class="submit-btn">Send Spell ✨</button>
+          <button type="submit" class="submit-btn">Send</button>
         </form>
-    </section>
+      </section>
 
-    <!-- Right: Other Contact Info -->
-    <section class="contact-info-section">
-        <h2>🔮 Other Ways to Reach Me</h2>
+      <!-- Right: Other Contact Info -->
+      <section class="contact-info-section">
+        <h2>Reach Me</h2>
         <ul class="contact-list">
-            <li><i class="fas fa-envelope"></i> nirmanaherath123@gmail.com</li>
-            <li><i class="fas fa-phone"></i> +94 77 600 8932</li>
-            <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+          <li><i class="fas fa-envelope"></i> nirmanaherath123@gmail.com</li>
+          <li><i class="fas fa-phone"></i> +94 77 600 8932</li>
+          <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
         </ul>
 
         <div class="social-links">
-            <a href="https://github.com/yourgithub" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href=""
+            ><img src="/assets/icons/github.png" alt="github" width="100px"
+          /></a>
+          <a href=""
+            ><img src="/assets/icons/linkedin.png" alt="linkedin" width="100px"
+          /></a>
         </div>
-    </section>
-</div>
+      </section>
+    </div>
 
-<footer class="footer">
-    <p>🌙 Crafted under the moonlight © 2025</p>
-</footer>
+    <footer class="footer">
+      <p>🌙 Crafted under the moonlight © 2025</p>
+    </footer>
 
-<!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-    (function(){
+    <!-- EmailJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
         emailjs.init("20Dj1Jg37VpRTSTZR"); // Replace with your EmailJS Public Key
-    })();
+      })();
 
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        emailjs.sendForm("service_neeg1sa", "template_ncc3zfi", this)
-            .then(function() {
-                alert("✨ Your magical message has been sent successfully!");
-                document.getElementById("contact-form").reset();
-            }, function(error) {
-                alert("⚠️ The spell fizzled... Please try again later.");
-                console.error(error);
-            });
-    });
-</script>
-
-</body>
+          emailjs.sendForm("service_neeg1sa", "template_ncc3zfi", this).then(
+            function () {
+              alert("✨ Your magical message has been sent successfully!");
+              document.getElementById("contact-form").reset();
+            },
+            function (error) {
+              alert("⚠️ The spell fizzled... Please try again later.");
+              console.error(error);
+            }
+          );
+        });
+    </script>
+  </body>
 </html>
