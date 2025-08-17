@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Projects - Magical Realm</title>
+    <link rel="stylesheet" href="/css/projectsStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/home.html" class="home-icon" title="Back to Home">
+        <img src="/assets/icons/door.png" alt="home" />
+        <span class="label">Back to Home</span>
+      </a>
+      <h1>My Projects</h1>
+    </header>
+
+    <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<section class="projects-section">
+  
+
+  <div class="project-card">
+    <h3>BookUs – Appointment Booking & Management System</h3>
+
+    <!-- Slider container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/assets/projects/bookus/1.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/2.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/3.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/4.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/5.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/6.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/7.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/8.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/9.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/10.png" alt="BookUs Screenshot 3"></div>
+      </div>
+      <!-- Pagination + Arrows -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+ <div class="description">
+  <p>
+    <strong>BookUs</strong> is a full-stack web platform designed to simplify appointment scheduling between service providers and customers. 
+    It offers an intuitive interface where providers manage services and time slots, while customers can book, edit, and track appointments seamlessly.
+  </p>
+
+  <h4>Key Features:</h4>
+
+  <h5>Customer Side</h5>
+  <ul class="feature-list">
+    <li>Browse services by category</li>
+    <li>Book, edit, or cancel pending appointments</li>
+    <li>View appointment history</li>
+    <li>Profile management (name, email, password)</li>
+  </ul>
+
+  <h5>Provider Side</h5>
+  <ul class="feature-list">
+    <li>Create & manage services with price, duration, and category</li>
+    <li>Auto-generate time slots based on service duration</li>
+    <li>Manage appointments with status updates (Pending, Confirmed, Completed, Cancelled)</li>
+    <li>Profile management for providers</li>
+  </ul>
+
+  <h4>Tech Stack:</h4>
+  <ul class="tech-stack-list">
+    <li><strong>Backend:</strong> Java 22, Spring Boot, Spring Data JPA, Hibernate, MySQL</li>
+    <li><strong>Frontend:</strong> React.js, Bootstrap 5, Axios, React Router</li>
+    <li><strong>Tools:</strong> VS Code, Postman, GitHub, MySQL Workbench</li>
+  </ul>
+</div>
+
+  </div>
+</section>
+
+<footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/yourgithub" target="_blank" class="social-btn github"><i class="fab fa-github"
+                    style="color: #ff7700;"></i> GitHub</a>
+            <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="social-btn linkedin"><i
+                    class="fab fa-linkedin-in" style="color: #ff7700;"></i> LinkedIn</a>
+        </div>
+        <p>🌙 Crafted under the moonlight © 2025</p>
+    </footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000, // auto slide every 3 seconds
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+</html>
