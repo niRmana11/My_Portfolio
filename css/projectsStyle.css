@@ -78,10 +78,11 @@ html {
 /* Projects Section */
 .projects-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem; /* spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-content: center; /* ✅ centers grid items */
   padding: 2rem;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 50px auto;
 }
 
@@ -91,13 +92,17 @@ html {
   border-radius: 15px;
   border: 1px solid rgba(200, 150, 255, 0.2);
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
-  padding: 50px;
+  padding: 40px;
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 500px;
+  align-self: start;
   text-align: center;
+  justify-content: flex-start;
+  overflow: hidden; /* ensures description stays inside */
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  width: 100%;
 }
 
 .project-card:hover {
@@ -113,14 +118,24 @@ html {
 
 /* Description */
 .description {
+  display: none;
   margin-top: 1rem;
   color: #e0d6ff;
   line-height: 1.8;
   text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
 
 .description.hidden {
   display: none;
+}
+
+.description.show {
+  display: block;
+  max-height: 1400px;
+  padding-top: 1rem;
 }
 
 .description h4,

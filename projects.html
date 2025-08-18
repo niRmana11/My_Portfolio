@@ -199,6 +199,17 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
   });
 });
 
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const desc = btn.parentElement.querySelector('.description');
+    desc.classList.toggle('show'); // toggle class
+
+    btn.innerText = desc.classList.contains('show') ? 'Close' : 'Read More';
+  });
+});
+
+
+
 </script>
 
 
