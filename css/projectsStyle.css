@@ -1,3 +1,4 @@
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -76,32 +77,27 @@ html {
 
 /* Projects Section */
 .projects-section {
-  padding: 4rem 2rem;
-  background: rgba(20, 0, 40, 0.7); /* same container background */
-  border: 2px solid rgba(200, 150, 255, 0.3);
-  border-radius: 20px;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem; /* spacing between cards */
+  padding: 2rem;
+  max-width: 1400px;
   margin: 50px auto;
-  box-shadow: 0 0 20px rgba(150, 0, 255, 0.4);
-  text-align: center;
-}
-
-.projects-section h2 {
-  font-size: 2rem;
-  color: #ffeefc;
-  text-shadow: 0 0 10px #ffccff, 0 0 20px #bb86fc;
-  margin-bottom: 2rem;
 }
 
 /* Project Card */
 .project-card {
   background: rgba(10, 0, 30, 0.8);
-  padding: 20px;
-  margin-bottom: 3rem;
-  border-radius: 20px;
+  border-radius: 15px;
   border: 1px solid rgba(200, 150, 255, 0.2);
   box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+  padding: 50px;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  text-align: center;
 }
 
 .project-card:hover {
@@ -111,51 +107,31 @@ html {
 
 .project-card h3 {
   font-size: 1.5rem;
-  color: #fff;
-  text-shadow: 0 0 5px #ff77ff, 0 0 10px #bb86fc;
+  color: #ffb347;
   margin-bottom: 1rem;
 }
 
+/* Description */
 .description {
-  background: rgba(20, 0, 40, 0.7);
-  border: 2px solid rgba(200, 150, 255, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 900px;
-  margin: 50px auto;
-  box-shadow: 0 0 20px rgba(150, 0, 255, 0.4);
+  margin-top: 1rem;
   color: #e0d6ff;
-  font-family: "Press Start 2P", cursive, sans-serif;
   line-height: 1.8;
+  text-align: left;
 }
 
-/* Paragraphs */
-.description p {
-  font-size: 1rem;
-  margin-bottom: 25px;
+.description.hidden {
+  display: none;
 }
 
-/* Headings */
-.description h4 {
-  font-size: 1.5rem;
-  margin-top: 20px;
-  margin-bottom: 15px;
+.description h4,
+.description h5 {
   color: #ffeefc;
   text-shadow: 0 0 5px #ff77ff, 0 0 15px #bb86fc;
 }
 
-.description h5 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #ffd6ff;
-  text-shadow: 0 0 5px #bb86fc;
-}
-
-/* Feature & Tech lists */
 .feature-list,
 .tech-stack-list {
   list-style: disc inside;
-  padding-left: 15px;
   margin-bottom: 20px;
 }
 
@@ -166,7 +142,6 @@ html {
   padding: 8px 12px;
   border-left: 4px solid #bb86fc;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -176,20 +151,18 @@ html {
   box-shadow: 0 0 15px #bb86fc, 0 0 25px #ff77ff;
 }
 
-/* Tech Stack emphasis */
 .tech-stack-list li strong {
   color: #ffb347;
-  text-shadow: 0 0 5px #ffa500;
 }
 
-/* Swiper Slider */
+/* Swiper */
 .swiper {
   width: 100%;
   height: 350px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
   margin-top: 1rem;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
 }
 
 .swiper-slide img {
@@ -199,11 +172,9 @@ html {
   border-radius: 15px;
 }
 
-/* Swiper navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
   color: #bb86fc;
-  text-shadow: 0 0 5px #ff77ff;
 }
 
 .swiper-button-next:hover,
@@ -211,7 +182,6 @@ html {
   color: #ff77ff;
 }
 
-/* Swiper pagination bullets */
 .swiper-pagination-bullet {
   background: #bb86fc;
   opacity: 0.7;
@@ -222,49 +192,56 @@ html {
   opacity: 1;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .swiper {
-    height: 250px;
-  }
+/* Toggle Button */
+.toggle-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #4a3aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  .project-card h3 {
-    font-size: 1.3rem;
-  }
+.toggle-btn:hover {
+  background: #ff77ff;
 }
 
 /* Footer */
 .footer {
   text-align: center;
-  padding: 20px 0 5px 0;
+  padding: 20px 0;
   background: rgba(10, 0, 30, 0.8);
   color: #ccc;
   font-size: 0.8rem;
 }
 
-.footer p {
-  margin-bottom: 0;
-}
-
-.social-links {
-  margin-bottom: 12px;
-}
-
-.social-btn {
+.social-links a {
   display: inline-block;
   margin: 0 12px;
-  color: #ffa500;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
   padding: 6px 12px;
   border: 1px solid #ffa500;
   border-radius: 8px;
+  color: #ffa500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.social-btn:hover {
+.social-links a:hover {
   background: #f8e0b4;
-
   color: #000;
   box-shadow: 0 0 10px #ffa500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    width: 95%;
+  }
+  .swiper {
+    height: 250px;
+  }
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
 }

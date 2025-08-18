@@ -33,7 +33,7 @@
     <h3>BookUs – Appointment Booking & Management System</h3>
 
     <!-- Slider container -->
-    <div class="swiper mySwiper">
+    <div class="swiper project-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="/assets/projects/bookus/1.png" alt="BookUs Screenshot 1"></div>
         <div class="swiper-slide"><img src="/assets/projects/bookus/2.png" alt="BookUs Screenshot 2"></div>
@@ -52,7 +52,74 @@
       <div class="swiper-button-next"></div>
     </div>
 
- <div class="description">
+    <p class="short-desc">A full-stack appointment booking & management system.</p>
+
+    <button class="toggle-btn">View More</button>
+
+ <div class="description hidden">
+  <p>
+    <strong>BookUs</strong> is a full-stack web platform designed to simplify appointment scheduling between service providers and customers. 
+    It offers an intuitive interface where providers manage services and time slots, while customers can book, edit, and track appointments seamlessly.
+  </p>
+
+  <h4>Key Features:</h4>
+
+  <h5>Customer Side</h5>
+  <ul class="feature-list">
+    <li>Browse services by category</li>
+    <li>Book, edit, or cancel pending appointments</li>
+    <li>View appointment history</li>
+    <li>Profile management (name, email, password)</li>
+  </ul>
+
+  <h5>Provider Side</h5>
+  <ul class="feature-list">
+    <li>Create & manage services with price, duration, and category</li>
+    <li>Auto-generate time slots based on service duration</li>
+    <li>Manage appointments with status updates (Pending, Confirmed, Completed, Cancelled)</li>
+    <li>Profile management for providers</li>
+  </ul>
+
+  <h4>Tech Stack:</h4>
+  <ul class="tech-stack-list">
+    <li><strong>Backend:</strong> Java 22, Spring Boot, Spring Data JPA, Hibernate, MySQL</li>
+    <li><strong>Frontend:</strong> React.js, Bootstrap 5, Axios, React Router</li>
+    <li><strong>Tools:</strong> VS Code, Postman, GitHub, MySQL Workbench</li>
+  </ul>
+</div>
+
+</div>
+
+
+
+<div class="project-card">
+    <h3>BookUs – Appointment Booking & Management System</h3>
+
+    <!-- Slider container -->
+    <div class="swiper project-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/assets/projects/bookus/1.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/2.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/3.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/4.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/5.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/6.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/7.png" alt="BookUs Screenshot 1"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/8.png" alt="BookUs Screenshot 2"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/9.png" alt="BookUs Screenshot 3"></div>
+        <div class="swiper-slide"><img src="/assets/projects/bookus/10.png" alt="BookUs Screenshot 3"></div>
+      </div>
+      <!-- Pagination + Arrows -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+     <p class="short-desc">A full-stack appointment booking & management system.</p>
+
+    <button class="toggle-btn">View More</button>
+
+ <div class="description hidden">
   <p>
     <strong>BookUs</strong> is a full-stack web platform designed to simplify appointment scheduling between service providers and customers. 
     It offers an intuitive interface where providers manage services and time slots, while customers can book, edit, and track appointments seamlessly.
@@ -97,25 +164,42 @@
         <p>🌙 Crafted under the moonlight © 2025</p>
     </footer>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper(".mySwiper", {
+// Initialize all Swipers
+document.querySelectorAll('.project-swiper').forEach(swiperEl => {
+  new Swiper(swiperEl, {
     loop: true,
-    autoplay: {
-      delay: 3000, // auto slide every 3 seconds
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+    autoplay: { delay: 2500, disableOnInteraction: false },
+    pagination: { el: swiperEl.querySelector('.swiper-pagination'), clickable: true },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+      nextEl: swiperEl.querySelector('.swiper-button-next'),
+      prevEl: swiperEl.querySelector('.swiper-button-prev')
+    }
   });
+});
+
+// Toggle project details
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const desc = btn.parentElement.querySelector('.description');
+    if(desc.classList.contains('hidden')){
+      desc.classList.remove('hidden');
+      btn.innerText = 'Close';
+    } else {
+      desc.classList.add('hidden');
+      btn.innerText = 'View More';
+    }
+  });
+});
+
 </script>
+
 
 </html>
