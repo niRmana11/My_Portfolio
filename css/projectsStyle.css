@@ -12,12 +12,12 @@ header {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(160px, 1fr)
-  ); /* smaller min size */
-  gap: 2rem; /* reduce gap so they look tighter */
-  padding: 5rem; /* adjust padding so cards fit better */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .project-card {
