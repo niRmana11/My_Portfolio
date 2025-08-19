@@ -1,262 +1,144 @@
-/* Reset & base */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body,
-html {
-  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: #fff;
-  overflow-x: hidden;
-  background-color: #0d011b;
-  font-family: "Press Start 2P", cursive, sans-serif;
 }
 
-/* Header */
-.header {
-  position: relative;
+header {
   text-align: center;
-  padding: 20px 0 10px;
-  color: #ffe8ff;
-  text-shadow: 0 0 10px #ff00cc, 0 0 30px #9900ff;
+  padding: 2rem;
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.home-icon {
-  position: absolute; /* instead of fixed */
-  top: 20px;
-  left: 20px;
-  font-size: 10px;
-  color: #f8e287;
-  text-decoration: none;
-  z-index: 100;
-  transition: transform 0.3s ease;
-}
-
-.home-icon img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
-}
-
-.home-icon:hover img {
-  transform: scale(1.2);
-  color: #ffd700;
-}
-
-.label {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  padding: 6px 12px;
-  border-radius: 8px;
-  color: #ffd700;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.home-icon:hover .label {
-  opacity: 1;
-}
-
-.tagline {
-  font-size: 1rem;
-  color: #bfb7ff;
-}
-
-/* Projects Section */
-.projects-section {
+.projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  justify-content: center; /* ✅ centers grid items */
+  gap: 2rem;
   padding: 2rem;
-  max-width: 1200px;
-  margin: 50px auto;
 }
 
-/* Project Card */
 .project-card {
-  background: rgba(10, 0, 30, 0.8);
-  border-radius: 15px;
-  border: 1px solid rgba(200, 150, 255, 0.2);
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
-  padding: 40px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-self: start;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
   text-align: center;
-  justify-content: flex-start;
-  overflow: hidden; /* ensures description stays inside */
-  transition: transform 0.3s, box-shadow 0.3s;
-
-  width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
-
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
 }
 
-.project-card h3 {
-  font-size: 1.5rem;
-  color: #ffb347;
-  margin-bottom: 1rem;
-}
-
-/* Description */
-.description {
-  display: none;
-  margin-top: 1rem;
-  color: #e0d6ff;
-  line-height: 1.8;
-  text-align: left;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
-}
-
-.description.hidden {
-  display: none;
-}
-
-.description.show {
-  display: block;
-  max-height: 1400px;
-  padding-top: 1rem;
-}
-
-.description h4,
-.description h5 {
-  color: #ffeefc;
-  text-shadow: 0 0 5px #ff77ff, 0 0 15px #bb86fc;
-}
-
-.feature-list,
-.tech-stack-list {
-  list-style: disc inside;
-  margin-bottom: 20px;
-}
-
-.feature-list li,
-.tech-stack-list li {
-  background: rgba(255, 255, 255, 0.05);
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  border-left: 4px solid #bb86fc;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-list li:hover,
-.tech-stack-list li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 0 15px #bb86fc, 0 0 25px #ff77ff;
-}
-
-.tech-stack-list li strong {
-  color: #ffb347;
-}
-
-/* Swiper */
-.swiper {
+.project-card img {
   width: 100%;
-  height: 350px;
-  border-radius: 15px;
-  overflow: hidden;
-  margin-top: 1rem;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #bb86fc;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: #ff77ff;
-}
-
-.swiper-pagination-bullet {
-  background: #bb86fc;
-  opacity: 0.7;
-}
-
-.swiper-pagination-bullet-active {
-  background: #ff77ff;
-  opacity: 1;
-}
-
-/* Toggle Button */
-.toggle-btn {
+.read-more-btn {
   margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #4a3aff;
-  color: white;
+  padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 8px;
+  background: #00aaff;
+  color: white;
   cursor: pointer;
+  transition: 0.3s;
+}
+.read-more-btn:hover {
+  background: #0088cc;
 }
 
-.toggle-btn:hover {
-  background: #ff77ff;
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed; /* overlay always covers the screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  justify-content: center;
+  overflow-y: auto; /* scroll entire modal if content is tall */
+  box-sizing: border-box;
+  padding: 2rem 1rem;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px 0;
-  background: rgba(10, 0, 30, 0.8);
-  color: #ccc;
-  font-size: 0.8rem;
+/* ===== Modal Content ===== */
+.modal-content {
+  position: absolute;
+  background: #1e1e2f;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  overflow: visible; /* allow content to grow naturally */
+  color: #fff;
 }
 
-.social-links a {
-  display: inline-block;
-  margin: 0 12px;
-  padding: 6px 12px;
-  border: 1px solid #ffa500;
+/* ===== Close Button ===== */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+}
+.close-btn:hover {
+  color: #00aaff;
+}
+
+/* ===== Modal Swiper ===== */
+.modal-swiper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.modal-swiper img {
+  width: 100%;
+  height: auto; /* maintain aspect ratio */
+  object-fit: contain;
   border-radius: 8px;
-  color: #ffa500;
-  text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-  background: #f8e0b4;
-  color: #000;
-  box-shadow: 0 0 10px #ffa500;
+/* ===== Modal Description ===== */
+.modal-description {
+  padding: 1rem 1.5rem;
+  background: #2b2b3c;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .project-card {
-    width: 95%;
-  }
-  .swiper {
-    height: 250px;
-  }
-  .project-card h3 {
-    font-size: 1.3rem;
-  }
+.modal-description h2 {
+  margin: 0;
+}
+
+.modal-description p {
+  margin: 0.3rem 0;
+  color: #ccc;
+}
+
+.modal-description ul {
+  padding-left: 1.2rem;
+  margin: 0.3rem 0;
+}
+
+.modal-description ul li {
+  margin-bottom: 0.2rem;
+}
+
+/* ===== Swiper buttons colors ===== */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00aaff;
+  width: 35px;
+  height: 35px;
 }
