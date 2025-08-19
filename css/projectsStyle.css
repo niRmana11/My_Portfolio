@@ -1,15 +1,27 @@
-body {
-  font-family: Arial, sans-serif;
+/* ===== Global & Body ===== */
+* {
   margin: 0;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  background-color: #0d011b;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
 header {
   text-align: center;
   padding: 2rem;
+  color: #ffe8ff;
+  text-shadow: 0 0 10px #ff00cc, 0 0 30px #9900ff;
 }
 
+/* ===== Projects Container ===== */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -20,84 +32,104 @@ header {
   justify-content: center;
 }
 
+/* ===== Project Cards ===== */
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.07);
+  border-left: 5px solid #9900ff;
   border-radius: 12px;
   padding: 1rem;
   text-align: left;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  box-shadow: 0 0 15px rgba(150, 0, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
 }
 
 .project-card img {
   width: 100%;
-  height: 250px; /* smaller image */
+  height: 250px;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
 }
 
+.project-info h3 {
+  font-size: 1rem;
+  color: #ffd700;
+  margin: 0.5rem 0;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: #d5d0fd;
+}
+
+/* ===== Read More Button ===== */
 .read-more-btn {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
   border: none;
   border-radius: 8px;
-  background: #00aaff;
-  color: white;
+  background: #ff00cc;
+  color: #fff;
+  font-size: 0.75rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
+
 .read-more-btn:hover {
-  background: #0088cc;
+  background: #9900ff;
+  box-shadow: 0 0 10px #ff00cc;
 }
 
 /* ===== Modal ===== */
 .modal {
   display: none;
-  position: fixed; /* overlay always covers the screen */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   z-index: 1000;
   justify-content: center;
-  overflow-y: auto; /* scroll entire modal if content is tall */
-  box-sizing: border-box;
-  padding: 2rem 1rem;
+  overflow-y: auto;
+  padding: 6rem 5rem;
 }
 
 /* ===== Modal Content ===== */
 .modal-content {
   position: absolute;
-  background: #1e1e2f;
-  border-radius: 12px;
+  background: #1a002f;
+  border-radius: 20px;
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 50px;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  overflow: visible; /* allow content to grow naturally */
+  gap: 1rem;
   color: #fff;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
 }
 
 /* ===== Close Button ===== */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
+  top: 0px;
+  right: 15px;
+  font-size: 3rem;
+  color: #ffd700;
   cursor: pointer;
-  z-index: 10;
-  color: #fff;
+  transition: color 0.3s ease;
 }
+
 .close-btn:hover {
-  color: #00aaff;
+  color: #ff00cc;
 }
 
 /* ===== Modal Swiper ===== */
@@ -105,29 +137,33 @@ header {
   width: 100%;
   margin-bottom: 1rem;
 }
+
 .modal-swiper img {
   width: 100%;
-  height: auto; /* maintain aspect ratio */
+  height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
 }
 
 /* ===== Modal Description ===== */
 .modal-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   padding: 1rem 1.5rem;
-  background: #2b2b3c;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .modal-description h2 {
-  margin: 0;
+  font-size: 2rem;
+  color: #ffd700;
 }
 
 .modal-description p {
-  margin: 0.3rem 0;
-  color: #ccc;
+  font-size: 1.2rem;
+  color: #d5d0fd;
 }
 
 .modal-description ul {
@@ -136,13 +172,66 @@ header {
 }
 
 .modal-description ul li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
 }
 
-/* ===== Swiper buttons colors ===== */
+/* ===== Swiper Buttons ===== */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #00aaff;
+  color: #ff00cc;
   width: 35px;
   height: 35px;
+}
+
+/* ===== Tech Stack Pills ===== */
+#modal-tech-stack span {
+  display: inline-block;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  background: rgba(255, 0, 255, 0.3);
+  color: #ffd700;
+  border-radius: 12px;
+  pointer-events: none;
+  box-shadow: 0 0 5px rgba(255, 0, 255, 0.4);
+}
+
+/* Tech pills */
+#modal-tech-stack span {
+  display: inline-block;
+  margin: 0.2rem 0.3rem 0.2rem 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: #ff00cc;
+  color: #fff;
+  border-radius: 12px;
+  pointer-events: none;
+}
+/* GitHub button */
+#modal-github-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+#modal-github-btn:hover {
+  background: #0088cc;
+}
+.feature-category {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+.modal-description ul ul {
+  margin-left: 1.2rem;
 }

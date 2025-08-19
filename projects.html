@@ -22,6 +22,50 @@
         <div class="swiper project-swiper all-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <img src="/assets/projects/weratework/1.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/2.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/3.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/4.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/5.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/6.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/7.png" alt="Project 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/weratework/8.png" alt="Project 1" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="project-info">
+          <h3>WeRateWork - Employee Satisfaction Web App</h3>
+          <p>
+            WeRateWork is a full-stack employee satisfaction web application
+            built to collect, manage, and analyze employee feedback across
+            different job roles and work categories.
+          </p>
+          <button class="read-more-btn" data-project="1">Read More</button>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="swiper project-swiper all-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
               <img src="/assets/projects/budgetbuddy/1.png" alt="Project 1" />
             </div>
             <div class="swiper-slide">
@@ -33,35 +77,13 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="project-info">
-          <h3>BudgetBuddy – Personal Finance Tracker App</h3>
+          <h3>WeRateWork - Employee Satisfaction Web App</h3>
           <p>
-            A simple and intuitive Android app developed in Kotlin that helps
-            users track income, expenses, and savings. Built for the Mobile
-            Application Development – CA Component 3 assignment.
+            WeRateWork is a full-stack employee satisfaction web application
+            built to collect, manage, and analyze employee feedback across
+            different job roles and work categories.
           </p>
           <button class="read-more-btn" data-project="1">Read More</button>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="swiper project-swiper all-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img3.jpg" alt="Project 2" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img4.jpg" alt="Project 2" />
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="project-info">
-          <h3>Taskify – Task Management App</h3>
-          <p>A simple task management web app...</p>
-          <button class="read-more-btn" data-project="2">Read More</button>
         </div>
       </div>
     </main>
@@ -80,7 +102,8 @@
           <h2></h2>
           <p></p>
           <ul></ul>
-          <p><strong>Tech Stack:</strong> <span id="modal-tech"></span></p>
+          <div id="modal-tech-stack"></div>
+          <button id="modal-github-btn">GitHub</button>
         </div>
       </div>
     </div>
@@ -88,12 +111,9 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Custom JS -->
     <script>
       // Initialize project card swipers
       let modalSwipers = [];
-
-      // Initialize all swipers
       document.querySelectorAll(".all-swiper").forEach((swiperEl) => {
         const swiper = new Swiper(swiperEl, {
           loop: true,
@@ -110,67 +130,50 @@
             disableOnInteraction: false,
           },
         });
-
         modalSwipers.push(swiper);
-      });
-
-      // When modal opens → restart autoplay
-      document.querySelectorAll(".read-more-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          setTimeout(() => {
-            modalSwipers.forEach((swiper) => {
-              swiper.update();
-              swiper.autoplay.start(); // 👈 forces autoplay
-            });
-          }, 200); // short delay lets modal become visible
-        });
       });
 
       // Project Data
       const projectData = {
         1: {
-          title: "BudgetBuddy – Personal Finance Tracker App",
+          title: "WeRateWork - Employee Satisfaction Web App",
           description:
-            "A simple and intuitive Android app developed in Kotlin that helps users track income, expenses, and savings. Built for the Mobile Application Development – CA Component 3 assignment.",
-          features: [
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
+            "A full-stack web app for employees to rate and manage workplace feedback.",
+          features: {
+            employee: [
+              "Rate Job Categories: Rate various work-related categories on a scale of 1–5.",
+              "Add Comments: Submit optional feedback comments.",
+              "Smart Form UX: Emoji-based rating selection.",
+            ],
+            admin: [
+              "Admin Dashboard: Bar Chart, Pie Chart, Line Chart",
+              "Filters & Management: Filter ratings, add/delete categories/roles",
+            ],
+            technical: [
+              "Authentication: Secure login system",
+              "Modern UI/UX: Mobile-friendly layout, gradient buttons, dark theme",
+            ],
+          },
+          tech: [
+            "Java 22",
+            "Spring Boot",
+            "HTML5",
+            "CSS3",
+            "MySQL",
+            "JavaScript ",
+            "Chart.js",
+            "IntelliJ IDEA",
           ],
-          tech: "Java Spring Boot, React, Bootstrap, MySQL",
+          github: "https://github.com/username/WeRateWork",
           images: [
-            "/assets/projects/budgetbuddy/1.png",
-            "/assets/projects/budgetbuddy/2.png",
-          ],
-        },
-        2: {
-          title: "BudgetBuddy – Personal Finance Tracker App",
-          description:
-            "A simple and intuitive Android app developed in Kotlin that helps users track income, expenses, and savings. Built for the Mobile Application Development – CA Component 3 assignment.",
-          features: [
-            "Providers manage services & time slots",
-            "Customers book & edit appointments",
-            "Clean responsive UI",
-          ],
-          tech: "Java Spring Boot, React, Bootstrap, MySQL",
-          images: [
-            "/assets/projects/budgetbuddy/1.png",
-            "/assets/projects/budgetbuddy/2.png",
+            "/assets/projects/weratework/1.png",
+            "/assets/projects/weratework/2.png",
+            "/assets/projects/weratework/3.png",
+            "/assets/projects/weratework/4.png",
+            "/assets/projects/weratework/5.png",
+            "/assets/projects/weratework/6.png",
+            "/assets/projects/weratework/7.png",
+            "/assets/projects/weratework/8.png",
           ],
         },
       };
@@ -185,26 +188,56 @@
           const projectId = btn.dataset.project;
           const data = projectData[projectId];
 
-          // Update modal description
+          // Title & description
           document.querySelector(".modal-description h2").textContent =
             data.title;
           document.querySelector(".modal-description p").textContent =
             data.description;
-          document.querySelector(".modal-description ul").innerHTML =
-            data.features.map((f) => `<li>${f}</li>`).join("");
-          document.getElementById("modal-tech").textContent = data.tech;
 
-          // Update modal swiper images
+          // Features with categories
+          const ulFeatures = document.querySelector(".modal-description ul");
+          ulFeatures.innerHTML = "";
+          for (const category in data.features) {
+            const heading = document.createElement("li");
+            heading.textContent =
+              category === "employee"
+                ? "👤 Employee Features"
+                : category === "admin"
+                ? "🛠️ Admin Features"
+                : "🧩 Technical Highlights";
+            heading.className = "feature-category";
+            ulFeatures.appendChild(heading);
+
+            const list = document.createElement("ul");
+            data.features[category].forEach((f) => {
+              const li = document.createElement("li");
+              li.textContent = f;
+              list.appendChild(li);
+            });
+            ulFeatures.appendChild(list);
+          }
+
+          // Tech stack pills
+          const techContainer = document.getElementById("modal-tech-stack");
+          techContainer.innerHTML = "";
+          data.tech.forEach((t) => {
+            const span = document.createElement("span");
+            span.textContent = t;
+            techContainer.appendChild(span);
+          });
+
+          // GitHub button
+          const githubBtn = document.getElementById("modal-github-btn");
+          githubBtn.onclick = () => window.open(data.github, "_blank");
+
+          // Modal swiper images
           const swiperWrapper = document.querySelector(
             ".modal-swiper .swiper-wrapper"
           );
           swiperWrapper.innerHTML = data.images
-            .map(
-              (img) => `<div class="swiper-slide"><img src="${img}" /></div>`
-            )
+            .map((img) => `<div class="swiper-slide"><img src="${img}"/></div>`)
             .join("");
 
-          // Initialize or update modal swiper
           if (modalSwiper) modalSwiper.destroy();
           modalSwiper = new Swiper(".modal-swiper", {
             loop: true,
