@@ -19,7 +19,7 @@
     <main class="projects-container">
       <!-- Project 1 -->
       <div class="project-card">
-        <div class="swiper project-swiper">
+        <div class="swiper project-swiper all-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="/assets/projects/budgetbuddy/1.png" alt="Project 1" />
@@ -45,7 +45,7 @@
 
       <!-- Project 2 -->
       <div class="project-card">
-        <div class="swiper project-swiper">
+        <div class="swiper project-swiper all-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="img3.jpg" alt="Project 2" />
@@ -70,7 +70,7 @@
     <div id="project-modal" class="modal">
       <div class="modal-content">
         <span class="close-btn">&times;</span>
-        <div class="swiper modal-swiper">
+        <div class="swiper modal-swiper all-swiper">
           <div class="swiper-wrapper"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -91,9 +91,11 @@
     <!-- Custom JS -->
     <script>
       // Initialize project card swipers
-      const projectSwipers = document.querySelectorAll(".project-swiper");
-      projectSwipers.forEach((swiperEl) => {
-        new Swiper(swiperEl, {
+      let modalSwipers = [];
+
+      // Initialize all swipers
+      document.querySelectorAll(".all-swiper").forEach((swiperEl) => {
+        const swiper = new Swiper(swiperEl, {
           loop: true,
           navigation: {
             nextEl: swiperEl.querySelector(".swiper-button-next"),
@@ -103,6 +105,24 @@
             el: swiperEl.querySelector(".swiper-pagination"),
             clickable: true,
           },
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+        });
+
+        modalSwipers.push(swiper);
+      });
+
+      // When modal opens → restart autoplay
+      document.querySelectorAll(".read-more-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          setTimeout(() => {
+            modalSwipers.forEach((swiper) => {
+              swiper.update();
+              swiper.autoplay.start(); // 👈 forces autoplay
+            });
+          }, 200); // short delay lets modal become visible
         });
       });
 
