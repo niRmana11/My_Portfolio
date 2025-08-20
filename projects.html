@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>My Projects</title>
     <link rel="stylesheet" href="/css/projectsStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Swiper CSS -->
     <link
@@ -13,7 +17,7 @@
   </head>
   <body>
     <header>
-      <h1>🚀 My Projects</h1>
+      <h1>My Projects</h1>
     </header>
 
     <main class="projects-container">
@@ -66,10 +70,34 @@
         <div class="swiper project-swiper all-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="/assets/projects/budgetbuddy/1.png" alt="Project 1" />
+              <img src="/assets/projects/bookus/1.png" alt="Project 2" />
             </div>
             <div class="swiper-slide">
-              <img src="/assets/projects/budgetbuddy/2.png" alt="Project 1" />
+              <img src="/assets/projects/bookus/2.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/3.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/4.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/5.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/6.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/7.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/8.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/9.png" alt="Project 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/bookus/10.png" alt="Project 2" />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -77,13 +105,12 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="project-info">
-          <h3>WeRateWork - Employee Satisfaction Web App</h3>
+          <h3>BudgetBuddy – Personal Finance Tracker</h3>
           <p>
-            WeRateWork is a full-stack employee satisfaction web application
-            built to collect, manage, and analyze employee feedback across
-            different job roles and work categories.
+            A simple and intuitive Android app developed in Kotlin that helps
+            users track income, expenses, and savings.
           </p>
-          <button class="read-more-btn" data-project="1">Read More</button>
+          <button class="read-more-btn" data-project="2">Read More</button>
         </div>
       </div>
     </main>
@@ -103,7 +130,9 @@
           <p></p>
           <ul></ul>
           <div id="modal-tech-stack"></div>
-          <button id="modal-github-btn">GitHub</button>
+          <button id="modal-github-btn">
+            <i class="fab fa-github" style="color: #ff7700"></i>GitHub
+          </button>
         </div>
       </div>
     </div>
@@ -112,7 +141,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      // Initialize project card swipers
+      // Initialize swipers
       let modalSwipers = [];
       document.querySelectorAll(".all-swiper").forEach((swiperEl) => {
         const swiper = new Swiper(swiperEl, {
@@ -140,16 +169,16 @@
           description:
             "A full-stack web app for employees to rate and manage workplace feedback.",
           features: {
-            employee: [
+            Employee: [
               "Rate Job Categories: Rate various work-related categories on a scale of 1–5.",
               "Add Comments: Submit optional feedback comments.",
               "Smart Form UX: Emoji-based rating selection.",
             ],
-            admin: [
+            Admin: [
               "Admin Dashboard: Bar Chart, Pie Chart, Line Chart",
               "Filters & Management: Filter ratings, add/delete categories/roles",
             ],
-            technical: [
+            Technical: [
               "Authentication: Secure login system",
               "Modern UI/UX: Mobile-friendly layout, gradient buttons, dark theme",
             ],
@@ -176,6 +205,48 @@
             "/assets/projects/weratework/8.png",
           ],
         },
+        2: {
+          title: "BookUs – Appointment Booking & Management System",
+          description:
+            "BookUs is a full-stack appointment booking and management platform designed to streamline the process of scheduling services between providers and customers.",
+          features: {
+            Customer: [
+              "Browse Services by Category: Easily explore services grouped under relevant categories.",
+              "Book Appointments: Select preferred date and time from available slots.",
+              "Edit or Cancel Pending Appointments: Modify notes or reschedule with a few clicks.",
+              "View Appointment History: Stay updated with current, past, and pending bookings.",
+              "Profile Management: Update name, email, and password securely.",
+            ],
+            Provider: [
+              "Create & Manage Services: Add services with price, duration, and category.",
+              "Generate Time Slots: Automatically generate time slots based on service duration.",
+              "Edit & Delete Services: Update service details or remove services completely.",
+              "Manage Appointments: Confirm or complete bookings with status updates.",
+              "Profile Management: Update personal and login details.",
+            ],
+            Technical: [
+              "Authentication: Local storage-based login system.",
+              "Dynamic Scheduling: Time slots generated based on provider’s input and service duration.",
+              "Modern UI: Clean layout with consistent colors, gradients, and responsive design.",
+              "Role-Based Dashboards: Separate experiences for customers and providers.",
+              "Appointment Statuses: Track appointments via status badges (Pending, Confirmed, Completed, Cancelled).",
+            ],
+          }, // flat list
+          tech: ["Kotlin", "Android Studio", "SQLite"],
+          github: "https://github.com/username/BudgetBuddy",
+          images: [
+            "/assets/projects/bookus/1.png",
+            "/assets/projects/bookus/2.png",
+            "/assets/projects/bookus/3.png",
+            "/assets/projects/bookus/4.png",
+            "/assets/projects/bookus/5.png",
+            "/assets/projects/bookus/6.png",
+            "/assets/projects/bookus/7.png",
+            "/assets/projects/bookus/8.png",
+            "/assets/projects/bookus/9.png",
+            "/assets/projects/bookus/10.png",
+          ],
+        },
       };
 
       const modal = document.getElementById("project-modal");
@@ -194,27 +265,33 @@
           document.querySelector(".modal-description p").textContent =
             data.description;
 
-          // Features with categories
+          // Features
           const ulFeatures = document.querySelector(".modal-description ul");
           ulFeatures.innerHTML = "";
-          for (const category in data.features) {
-            const heading = document.createElement("li");
-            heading.textContent =
-              category === "employee"
-                ? "👤 Employee Features"
-                : category === "admin"
-                ? "🛠️ Admin Features"
-                : "🧩 Technical Highlights";
-            heading.className = "feature-category";
-            ulFeatures.appendChild(heading);
-
-            const list = document.createElement("ul");
-            data.features[category].forEach((f) => {
+          if (Array.isArray(data.features)) {
+            // flat list
+            data.features.forEach((f) => {
               const li = document.createElement("li");
               li.textContent = f;
-              list.appendChild(li);
+              ulFeatures.appendChild(li);
             });
-            ulFeatures.appendChild(list);
+          } else {
+            // grouped features
+            for (const category in data.features) {
+              const heading = document.createElement("li");
+
+              heading.textContent = `${category} Features`;
+              heading.className = "feature-category";
+              ulFeatures.appendChild(heading);
+
+              const list = document.createElement("ul");
+              data.features[category].forEach((f) => {
+                const li = document.createElement("li");
+                li.textContent = f;
+                list.appendChild(li);
+              });
+              ulFeatures.appendChild(list);
+            }
           }
 
           // Tech stack pills
@@ -230,7 +307,7 @@
           const githubBtn = document.getElementById("modal-github-btn");
           githubBtn.onclick = () => window.open(data.github, "_blank");
 
-          // Modal swiper images
+          // Swiper images
           const swiperWrapper = document.querySelector(
             ".modal-swiper .swiper-wrapper"
           );
@@ -248,6 +325,10 @@
             pagination: {
               el: ".modal-swiper .swiper-pagination",
               clickable: true,
+            },
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
             },
           });
 
