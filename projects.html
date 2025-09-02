@@ -120,10 +120,10 @@
         <div class="swiper project-swiper all-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="/assets/projects/budgetbuddy/1.png" alt="Project 2" />
+              <img src="/assets/projects/budgetbuddy/1.png" alt="Project 3" />
             </div>
             <div class="swiper-slide">
-              <img src="/assets/projects/budgetbuddy/2.png" alt="Project 2" />
+              <img src="/assets/projects/budgetbuddy/2.png" alt="Project 3" />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -138,6 +138,47 @@
             Application Development – CA Component 3 assignment.
           </p>
           <button class="read-more-btn" data-project="3">Read More</button>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <div class="swiper project-swiper all-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/1.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/2.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/3.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/4.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/5.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/6.png" alt="Project 4" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/projects/spicesense/7.png" alt="Project 4" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="project-info">
+          <h3>SpiceSense - Inventory Management System</h3>
+          <p>
+            SpiceSense is a full-featured inventory management system developed
+            as the group project for the IT Project module in the 2nd year, 2nd
+            semester at SLIIT.
+          </p>
+          <button class="read-more-btn" data-project="4">Read More</button>
         </div>
       </div>
     </main>
@@ -272,7 +313,8 @@
             "GitHub",
             "MySQL Workbench",
           ],
-          github: "https://github.com/username/BudgetBuddy",
+          github:
+            "https://github.com/niRmana11/BookUs-Java-Web-Application.git",
           images: [
             "/assets/projects/bookus/1.png",
             "/assets/projects/bookus/2.png",
@@ -318,6 +360,64 @@
             "/assets/projects/budgetbuddy/2.png",
           ],
         },
+        4: {
+          title: "SpiceSense - Inventory Management System",
+          description:
+            "SpiceSense is a full-featured inventory management system developed as the group project for the IT Project module in the 2nd year, 2nd semester at SLIIT. The system is specifically designed to help spice companies efficiently manage their stock, track expiry dates, and receive critical alerts — all in real time.This is a group project developed by 5 team members using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+          features: {
+            "🔧 My Contribution": {
+              "🧮 Inventory Overview Page": [
+                "Displays automated alerts for low stock and nearing/expired products",
+                "Shows a stock graph for visual representation of current inventory levels",
+                "Includes a report generation feature for downloading stock reports",
+              ],
+              "📦 Stock Levels Page": [
+                "Add new stock entries (Stock In)",
+                "Record outgoing stocks (Stock Out / Sales)",
+                "Live update of current stock quantities",
+              ],
+              "🔄 Stock Transactions Page": [
+                "View full stock-in and stock-out transaction history",
+                "Filter transactions by date range or product",
+              ],
+              "⏳ Expiry Alerts Page": [
+                "Sorts products into: Expired, Nearing Expiry, Safe",
+                "Helps with timely disposal or promotions for nearly expired items",
+              ],
+              "🔍 Search and Filter Page": [
+                "Find products quickly using search by name, category, or ID",
+                "Filter by stock level, expiry status, or transaction date",
+              ],
+              "➕ Add Product Page": [
+                "Add new spice products to the system with relevant details",
+                "Ensure clean and structured data entry",
+              ],
+              "🛠️ Edit & Delete Features": [
+                "Modify existing product details",
+                "Remove outdated or incorrect entries from the database",
+              ],
+            },
+          },
+          tech: [
+            "MongoDB",
+            "Express.js",
+            "React.js",
+            "Node.js",
+            "Bootstrap 5",
+            "VS Code",
+            "GitHub",
+          ],
+          github: "https://github.com/niRmana11/SpiceSense-MERN.git",
+          images: [
+            "/assets/projects/spicesense/1.png",
+            "/assets/projects/spicesense/2.png",
+            "/assets/projects/spicesense/3.png",
+            "/assets/projects/spicesense/4.png",
+            "/assets/projects/spicesense/5.png",
+            "/assets/projects/spicesense/6.png",
+            "/assets/projects/spicesense/7.png",
+          ],
+        },
       };
 
       const modal = document.getElementById("project-modal");
@@ -339,29 +439,43 @@
           // Features
           const ulFeatures = document.querySelector(".modal-description ul");
           ulFeatures.innerHTML = "";
-          if (Array.isArray(data.features)) {
-            // flat list
-            data.features.forEach((f) => {
-              const li = document.createElement("li");
-              li.textContent = f;
-              ulFeatures.appendChild(li);
-            });
-          } else {
-            // grouped features
-            for (const category in data.features) {
-              const heading = document.createElement("li");
 
-              heading.textContent = `${category} Features`;
-              heading.className = "feature-category";
-              ulFeatures.appendChild(heading);
+          // Iterate main categories
+          for (const mainCategory in data.features) {
+            const mainHeading = document.createElement("li");
+            mainHeading.textContent = mainCategory;
+            mainHeading.className = "feature-category";
+            ulFeatures.appendChild(mainHeading);
 
-              const list = document.createElement("ul");
-              data.features[category].forEach((f) => {
+            const subFeatures = data.features[mainCategory];
+
+            // If subFeatures is an array (flat list)
+            if (Array.isArray(subFeatures)) {
+              const pageList = document.createElement("ul");
+              subFeatures.forEach((f) => {
                 const li = document.createElement("li");
                 li.textContent = f;
-                list.appendChild(li);
+                pageList.appendChild(li);
               });
-              ulFeatures.appendChild(list);
+              ulFeatures.appendChild(pageList);
+            } else {
+              // subFeatures is an object (nested, like SpiceSense)
+              const subList = document.createElement("ul");
+              for (const page in subFeatures) {
+                const pageHeading = document.createElement("li");
+                pageHeading.textContent = page;
+                pageHeading.className = "feature-page";
+                subList.appendChild(pageHeading);
+
+                const pageList = document.createElement("ul");
+                subFeatures[page].forEach((f) => {
+                  const li = document.createElement("li");
+                  li.textContent = f;
+                  pageList.appendChild(li);
+                });
+                subList.appendChild(pageList);
+              }
+              ulFeatures.appendChild(subList);
             }
           }
 
