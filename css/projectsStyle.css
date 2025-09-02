@@ -24,7 +24,7 @@ header {
 /* ===== Projects Container ===== */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
   gap: 2rem;
   padding: 1.5rem;
   max-width: 80%;
@@ -182,6 +182,14 @@ header {
   color: #ff00cc;
   width: 35px;
   height: 35px;
+}
+
+#modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px; /* spacing between pills */
+  margin-top: 0.5rem;
+  justify-content: center;
 }
 
 /* Tech pills */
