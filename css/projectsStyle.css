@@ -321,3 +321,72 @@ body {
   color: #000;
   box-shadow: 0 0 10px #ffa500;
 }
+
+.project-card .swiper-slide img {
+  transition: transform 0.3s ease;
+}
+
+.project-card .swiper-slide img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 500px) {
+  .project-card img {
+    height: 200px; /* smaller image height for mobile */
+  }
+
+  .project-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .project-info p {
+    font-size: 0.8rem;
+  }
+
+  .read-more-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal {
+    padding: 3rem 1.5rem;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 1rem;
+  }
+
+  .modal-description h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-description p {
+    font-size: 1rem;
+  }
+
+  .modal-description ul li {
+    font-size: 0.9rem;
+  }
+
+  #modal-tech-stack span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

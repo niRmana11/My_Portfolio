@@ -256,3 +256,126 @@ body {
   top: 78%;
   left: 5%;
 }
+
+/* ===================== RESPONSIVE MEDIA QUERIES ===================== */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .icon-link img,
+  .easter-egg img {
+    width: 40px; /* smaller icons for mobile */
+    height: 40px;
+  }
+
+  .icon-project {
+    top: 20%;
+    left: 5%;
+  }
+  .icon-about {
+    top: 5%;
+    left: 85%;
+  }
+  .icon-resume {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .icon-skills {
+    top: 75%;
+    left: 10%;
+  }
+  .icon-contact {
+    top: 70%;
+    left: 75%;
+  }
+  .icon-cloud {
+    top: 75%;
+    left: 5%;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+  .social-btn {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    margin: 0 6px;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .icon-link img,
+  .easter-egg img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-project {
+    top: 23%;
+    left: 6%;
+  }
+  .icon-about {
+    top: 6%;
+    left: 90%;
+  }
+  .icon-resume {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .icon-skills {
+    top: 78%;
+    left: 15%;
+  }
+  .icon-contact {
+    top: 73%;
+    left: 78%;
+  }
+  .icon-cloud {
+    top: 76%;
+    left: 5%;
+  }
+
+  .footer {
+    font-size: 0.75rem;
+  }
+  .social-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 0 8px;
+  }
+}
+
+/* Large screens (901px and above) */
+@media (min-width: 901px) {
+  .header h1 {
+    font-size: 36px;
+  }
+  .tagline {
+    font-size: 16px;
+  }
+
+  .icon-link img {
+    width: 60px;
+    height: 60px;
+  }
+  .easter-egg img {
+    width: 40px;
+    height: 40px;
+  }
+}

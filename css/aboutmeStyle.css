@@ -5,15 +5,14 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   color: #fff;
   overflow-x: hidden;
   background-color: #0d011b;
-   font-family: 'Press Start 2P', cursive, sans-serif;
+  font-family: "Press Start 2P", cursive, sans-serif;
 }
-
-
 
 /* Header */
 .header {
@@ -40,13 +39,13 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-.home-icon img{
-    width: 50px;
+.home-icon img {
+  width: 50px;
   height: 50px;
   transition: transform 0.3s ease;
 }
 
-.home-icon:hover img{
+.home-icon:hover img {
   transform: scale(1.2);
   color: #ffd700;
 }
@@ -56,7 +55,7 @@ body, html {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  
+
   padding: 6px 12px;
   border-radius: 8px;
   color: #ffd700;
@@ -70,7 +69,6 @@ body, html {
 .home-icon:hover .label {
   opacity: 1;
 }
-
 
 .tagline {
   font-size: 1rem;
@@ -131,19 +129,16 @@ body, html {
   box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
 }
 
-
 /* Footer */
 .footer {
   text-align: center;
-  padding:  20px  0 5px 0;
+  padding: 20px 0 5px 0;
   background: rgba(10, 0, 30, 0.8);
   color: #ccc;
   font-size: 0.8rem;
- 
- 
 }
 
-.footer p{
+.footer p {
   margin-bottom: 0;
 }
 
@@ -170,5 +165,108 @@ body, html {
   box-shadow: 0 0 10px #ffa500;
 }
 
+/* ===================== RESPONSIVE MEDIA QUERIES ===================== */
 
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
 
+  .home-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+  }
+
+  .about-section h2,
+  .education-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-section p,
+  .education-section li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .education-section li {
+    padding: 10px;
+  }
+
+  .social-btn {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    margin: 0 6px;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .container {
+    padding: 30px;
+    margin: 30px auto;
+  }
+
+  .about-section h2,
+  .education-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-section p,
+  .education-section li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .social-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 0 8px;
+  }
+
+  .footer {
+    font-size: 0.75rem;
+  }
+}
+
+/* Large screens (901px and above) */
+@media (min-width: 901px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 40px;
+    margin: 50px auto;
+  }
+
+  .about-section h2,
+  .education-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p,
+  .education-section li {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

@@ -176,3 +176,86 @@ textarea {
   color: #ccc;
   font-size: 0.8rem;
 }
+
+/* ===================== RESPONSIVE MEDIA QUERIES ===================== */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contact-form-section input,
+  .contact-form-section textarea {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+    min-width: 150px;
+  }
+
+  .contact-info-section a img {
+    width: 70px;
+    margin: 5px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .contact-form-section input,
+  .contact-form-section textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Large screens (901px and above) */
+@media (min-width: 901px) {
+  .contact-container {
+    flex-direction: row;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    width: 45%;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+}

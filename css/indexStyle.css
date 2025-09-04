@@ -1,30 +1,32 @@
+/* Reset & Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Press Start 2P", cursive, sans-serif; /* Keep font consistent */
 }
 
+/* Hero Section */
 .hero {
-    background: url('../assets/img/LandingPageBackground.png');
-    background-repeat: repeat, no-repeat;
-    background-size: cover;
-    background-position: center, center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  background: url("../assets/img/LandingPageBackground.png") center/cover
+    no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .overlay {
-    text-align: center;
-    color: #fff;
-    animation: fadein 2s ease;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 2s ease;
+  padding: 0 20px; /* Add padding for small screens */
 }
 
 .hero-title {
@@ -58,6 +60,64 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== RESPONSIVE MEDIA QUERIES ===================== */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 1.8rem; /* smaller title */
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .enter-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+
+  .enter-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens (901px and above) */
+@media (min-width: 901px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .enter-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
 }
